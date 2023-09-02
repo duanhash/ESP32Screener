@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -62.58, "left": 4.39, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -23.71,
+      "left": 174.48,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:SDA", "esp:D21", "green", [ "h-28.8", "v-26.28" ] ],
+    [ "lcd1:GND", "esp:GND.1", "black", [ "h-42.11", "v74.47" ] ],
+    [ "lcd1:VCC", "esp:3V3", "red", [ "h-29.94", "v82.85" ] ],
+    [ "lcd1:SCL", "esp:D22", "green", [ "h-32.22", "v-68.48" ] ]
+  ],
+  "dependencies": {}
+}
